@@ -2811,6 +2811,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2832,6 +2836,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Layout */ "./resources/js/components/Layout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3009,12 +3034,15 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
+  props: {
+    errors: Object
+  },
   components: {
     Layout: _components_Layout__WEBPACK_IMPORTED_MODULE_0__.default
   },
   methods: {
     kirimdata: function kirimdata() {
-      this.$inertia.post('/home/daftarsiswa/hdf/send', this.form);
+      this.$inertia.post('/home/daftarsiswa/hdf', this.form);
     }
   }
 });
@@ -42147,11 +42175,21 @@ var render = function() {
                   staticClass: "btn btn-outline-info btn-block",
                   attrs: { href: "/home/daftarsiswa/hdf" }
                 },
-                [_vm._v("Tambah Siswa Baru")]
+                [_vm._v("Tambah Siswa Baru\n                ")]
               )
             ],
             1
           ),
+          _vm._v(" "),
+          _vm.$page.props.flash.message
+            ? _c("div", { staticClass: "alert" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$page.props.flash.message) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _vm._m(0)
         ])
@@ -42284,7 +42322,13 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.nama_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.nama_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42331,7 +42375,13 @@ var render = function() {
                           _vm._v(" "),
                           _c("option", { attrs: { value: "P" } }, [_vm._v("P")])
                         ]
-                      )
+                      ),
+                      _vm._v(" "),
+                      _vm.errors.gender_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.gender_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42363,7 +42413,13 @@ var render = function() {
                             _vm.$set(_vm.form, "nisn", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.nisn
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.nisn))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42399,7 +42455,13 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.lahir_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.lahir_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42435,7 +42497,16 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.tempat_lahir_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(_vm.errors.tempat_lahir_siswa)
+                            )
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42467,7 +42538,13 @@ var render = function() {
                             _vm.$set(_vm.form, "askol", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.askol_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.askol_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42499,7 +42576,13 @@ var render = function() {
                             _vm.$set(_vm.form, "hp_siswa", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.hp_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.hp_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42535,7 +42618,13 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.alamat_siswa
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.alamat_siswa))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42569,7 +42658,13 @@ var render = function() {
                             _vm.$set(_vm.form, "nama_ortu", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.nama_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.nama_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42601,7 +42696,13 @@ var render = function() {
                             _vm.$set(_vm.form, "kk", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.kk_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.kk_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42633,7 +42734,13 @@ var render = function() {
                             _vm.$set(_vm.form, "ktp", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.ktp_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.ktp_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42665,7 +42772,13 @@ var render = function() {
                             _vm.$set(_vm.form, "hp_ortu", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.hp_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.hp_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42771,7 +42884,13 @@ var render = function() {
                             _vm._v("DOKTER")
                           ])
                         ]
-                      )
+                      ),
+                      _vm._v(" "),
+                      _vm.errors.pekerjaan_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.pekerjaan_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42807,7 +42926,13 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.alamat_ortu
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.alamat_ortu))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),
@@ -42839,7 +42964,13 @@ var render = function() {
                             _vm.$set(_vm.form, "rek", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.errors.rek
+                        ? _c("p", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.rek))
+                          ])
+                        : _vm._e()
                     ])
                   ]),
                   _vm._v(" "),

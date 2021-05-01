@@ -39,15 +39,33 @@ class HomeController extends Controller
     {
         return Inertia::render('Dashboard/Hdf');
     }
-    public function send(Request $request)
+    public function store(Request $request)
     {
+        //dd($request->all());
+        $request->validate([
+            'nama_siswa' => 'required',
+            'gender_siswa' => 'required',
+            'nisn' => 'required',
+            'lahir_siswa' => 'required',
+            'tempat_lahir_siswa' => 'required',
+            'askol_siswa' => 'required',
+            'hp_siswa' => 'required',
+            'alamat_siswa' => 'required',
+            'nama_ortu' => 'required',
+            'kk_ortu' => 'required',
+            'ktp_ortu' => 'required',
+            'hp_ortu' => 'required',
+            'pekerjaan_ortu' => 'required',
+            'alamat_ortu' => 'required',
+            'rek' => 'required'
+        ]);
         
         $data = Dafsis::create([
             'nama_siswa' => $request->nama_siswa,
             'gender_siswa' => $request->gender_siswa,
             'nisn' => $request->nisn,
             'lahir_siswa' => $request->tanggal_lahir,
-            'tgl_l_siswa' => $request->tempat_lahir,
+            'tempat_lahir_siswa' => $request->tempat_lahir,
             'askol_siswa' => $request->askol,
             'hp_siswa' => $request->hp_siswa,
             'alamat_siswa' => $request->alamat_siswa,
@@ -56,10 +74,10 @@ class HomeController extends Controller
             'ktp_ortu' => $request->ktp,
             'hp_ortu' => $request->hp_ortu,
             'pekerjaan_ortu' => $request->pekerjaan,
-            'alamat_ortu' => $request->hp_ortu,
+            'alamat_ortu' => $request->alamat_ortu,
             'rekomendasi' => $request->rek,
         ]);
 
-        return Inertia::render('Dashboard/Daftar');
+        return redirect('/home/daftarsiswa')->with('message', 'Sukses');
     }
 }

@@ -19,7 +19,7 @@ class CreateDafsesTable extends Migration
             $table->string('gender_siswa');
             $table->string('nisn')->nullable();
             $table->longText('lahir_siswa');
-            $table->longText('tgl_l_siswa');
+            $table->longText('tempat_lahir_siswa');
             $table->longText('askol_siswa');
             $table->longText('hp_siswa')->nullable();
             $table->longText('alamat_siswa');

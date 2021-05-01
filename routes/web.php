@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/daftarsiswa', [HomeController::class, 'daftarSis']);
 Route::get('/home/daftarsiswa/hdf', [HomeController::class, 'hdf']);
-Route::post('/home/daftarsiswa/hdf/send', [HomeController::class, 'send']);
+Route::post('/home/daftarsiswa/hdf', [HomeController::class, 'store']);
 
 
 Route::get('/logout', [HomeController::class, 'logout']);
