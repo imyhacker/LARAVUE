@@ -24,5 +24,12 @@ Route::get('/home/daftarsiswa', [HomeController::class, 'daftarSis']);
 Route::get('/home/daftarsiswa/hdf', [HomeController::class, 'hdf']);
 Route::post('/home/daftarsiswa/hdf', [HomeController::class, 'store']);
 
+// OPTION
+Route::get('/home/datasiswa/{id}/look', [HomeController::class, 'look']);
+
+Route::get('/home/daftarsiswa/hapussemua', [HomeController::class, 'hapussemua']);
+
+// jurusan
+Route::post('/home/daftarsiswa/tambahjurusan', [HomeController::class, 'tambahjurusan']);
 
 Route::get('/logout', [HomeController::class, 'logout']);

@@ -31,6 +31,12 @@ class CreateDafsesTable extends Migration
             $table->longText('alamat_ortu');
             $table->longText('pekerjaan_ortu');
 
+            //STATUS
+            $table->string('status');
+            
+            //Jurusan
+            $table->string('jurusan');
+
             // REKOMENDASI
             $table->string('rekomendasi');
             
